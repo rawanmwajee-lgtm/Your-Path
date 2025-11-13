@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="container">
-    <img src="golf-cart.jpg" alt="سيارة قولف" class="golf-image">
+    <img src="car.jpg" alt="سيارة قولف" class="golf-image">
 
     <button class="main-button" onclick="toggleForm()">احجز الآن</button>
 
@@ -61,12 +61,14 @@
       } else if (from === "البرج" || to === "البرج") {
         price = 0.25;
       } else {
-        price = 1.5; // سعر افتراضي إذا ما انطبقت الشروط
+        price = 1.5;
       }
 
       document.getElementById("priceResult").innerText =
         price === 0 ? "التوصيل مجاني" : `السعر: ${price} د.ك`;
     }
   </script>
+</body>
+</html>
 </body>
 </html>
