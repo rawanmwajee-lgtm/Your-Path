@@ -1,14 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-  <title>مشروعي الجامعي</title>
-  <style>
-    body { font-family: Arial; text-align: center; margin-top: 50px; }
-    h1 { color: #2c3e50; }
-  </style>
+  <meta charset="UTF-8">
+  <title>حجز سيارة قولف</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>أهلاً دكتورة 👩‍🏫</h1>
-  <p></p>هذا الموقع يعرض تفاصيل مشروعي </p>
+  <div class="container">
+    <h1>🚗 خدمة التنقل بين الكليات</h1>
+    <img src="golf-cart.jpg" alt="سيارة قولف" class="golf-image">
+    <button onclick="toggleForm()">احجز</button>
+
+    <div id="bookingForm" style="display:none;">
+      <label>من أي كلية؟</label>
+      <select id="from">
+        <option>كلية الهندسة</option>
+        <option>كلية العلوم</option>
+        <option>كلية الطب</option>
+        <option>كلية الآداب</option>
+      </select>
+
+      <label>إلى أي كلية؟</label>
+      <select id="to">
+        <option>كلية الهندسة</option>
+        <option>كلية العلوم</option>
+        <option>كلية الطب</option>
+        <option>كلية الآداب</option>
+      </select>
+
+      <button onclick="calculatePrice()">احسب السعر</button>
+      <p id="priceResult"></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const form = document.getElementById("bookingForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+    function calculatePrice() {
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      let price = 0;
+
+      if (from === to) {
+        price = 0;
+      } else {
+        price = 1 + Math.abs(from.charCodeAt(0) - to.charCodeAt(0));
+      }
+
+      document.getElementById("priceResult").innerText =
+        price === 0 ? "التوصيل مجاني من البرج" : `السعر: ${price} د.ك`;
+    }
+  </script>
 </body>
 </html>
