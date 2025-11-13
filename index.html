@@ -8,23 +8,26 @@
 <body>
   <div class="container">
     <img src="golf-cart.jpg" alt="سيارة قولف" class="golf-image">
-    <button onclick="toggleForm()">احجز</button>
+
+    <button class="main-button" onclick="toggleForm()">احجز الآن</button>
 
     <div id="bookingForm" style="display:none;">
-      <label>من أي كلية؟</label>
+      <label>من أي جهة؟</label>
       <select id="from">
-        <option>كلية الهندسة</option>
-        <option>كلية العلوم</option>
-        <option>كلية الطب</option>
-        <option>كلية الآداب</option>
+        <option>كلية التكنولوجيا</option>
+        <option>كلية العلوم الصحية</option>
+        <option>كلية التمريض</option>
+        <option>معهد التمريض</option>
+        <option>البرج</option>
       </select>
 
-      <label>إلى أي كلية؟</label>
+      <label>إلى أي جهة؟</label>
       <select id="to">
-        <option>كلية الهندسة</option>
-        <option>كلية العلوم</option>
-        <option>كلية الطب</option>
-        <option>كلية الآداب</option>
+        <option>كلية التكنولوجيا</option>
+        <option>كلية العلوم الصحية</option>
+        <option>كلية التمريض</option>
+        <option>معهد التمريض</option>
+        <option>البرج</option>
       </select>
 
       <button onclick="calculatePrice()">احسب السعر</button>
@@ -45,12 +48,24 @@
 
       if (from === to) {
         price = 0;
+      } else if (
+        (from === "كلية التكنولوجيا" && (to === "كلية العلوم الصحية" || to === "كلية التمريض")) ||
+        ((from === "كلية العلوم الصحية" || from === "كلية التمريض") && to === "كلية التكنولوجيا")
+      ) {
+        price = 1;
+      } else if (
+        (from === "معهد التمريض" && (to === "كلية التمريض" || to === "كلية العلوم الصحية")) ||
+        ((from === "كلية التمريض" || from === "كلية العلوم الصحية") && to === "معهد التمريض")
+      ) {
+        price = 0.5;
+      } else if (from === "البرج" || to === "البرج") {
+        price = 0.25;
       } else {
-        price = 1 + Math.abs(from.charCodeAt(0) - to.charCodeAt(0));
+        price = 1.5; // سعر افتراضي إذا ما انطبقت الشروط
       }
 
       document.getElementById("priceResult").innerText =
-        price === 0 ? "التوصيل مجاني من البرج" : `السعر: ${price} د.ك`;
+        price === 0 ? "التوصيل مجاني" : `السعر: ${price} د.ك`;
     }
   </script>
 </body>
