@@ -2,74 +2,17 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>حجز سيارة قولف</title>
+  <title>الرئيسية</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <img src="car.jpg.png" alt="سيارة قولف" class="golf-image">
+    <h1 class="main-heading">وين تبي تروح؟</h1>
 
+    <img src="car.png" alt="سيارة قولف" class="golf-image">
 
-    <button class="main-button" onclick="toggleForm()">احجز الآن</button>
-
-    <div id="bookingForm" style="display:none;">
-      <label>من أي جهة؟</label>
-      <select id="from">
-        <option>كلية التكنولوجيا</option>
-        <option>كلية العلوم الصحية</option>
-        <option>كلية التمريض</option>
-        <option>معهد التمريض</option>
-        <option>البرج</option>
-      </select>
-
-      <label>إلى أي جهة؟</label>
-      <select id="to">
-        <option>كلية التكنولوجيا</option>
-        <option>كلية العلوم الصحية</option>
-        <option>كلية التمريض</option>
-        <option>معهد التمريض</option>
-        <option>البرج</option>
-      </select>
-
-      <button onclick="calculatePrice()">احسب السعر</button>
-      <p id="priceResult"></p>
-    </div>
+    <a href="booking.html" class="main-button">احجز الآن</a>
   </div>
-
-  <script>
-    function toggleForm() {
-      const form = document.getElementById("bookingForm");
-      form.style.display = form.style.display === "none" ? "block" : "none";
-    }
-
-    function calculatePrice() {
-      const from = document.getElementById("from").value;
-      const to = document.getElementById("to").value;
-      let price = 0;
-
-      if (from === to) {
-        price = 0;
-      } else if (
-        (from === "كلية التكنولوجيا" && (to === "كلية العلوم الصحية" || to === "كلية التمريض")) ||
-        ((from === "كلية العلوم الصحية" || from === "كلية التمريض") && to === "كلية التكنولوجيا")
-      ) {
-        price = 1;
-      } else if (
-        (from === "معهد التمريض" && (to === "كلية التمريض" || to === "كلية العلوم الصحية")) ||
-        ((from === "كلية التمريض" || from === "كلية العلوم الصحية") && to === "معهد التمريض")
-      ) {
-        price = 0.5;
-      } else if (from === "البرج" || to === "البرج") {
-        price = 0.25;
-      } else {
-        price = 1.5;
-      }
-
-      document.getElementById("priceResult").innerText =
-        price === 0 ? "التوصيل مجاني" : `السعر: ${price} د.ك`;
-    }
-  </script>
 </body>
 </html>
-</body>
 </html>
