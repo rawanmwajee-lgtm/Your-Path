@@ -1,6 +1,5 @@
 body {
-  background-color: #ffeef5; /* بيبي بينك فاتح */
-  font-family: 'Arial', sans-serif;
+  background-color: #ffeef5;
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,55 +8,33 @@ body {
   min-height: 100vh;
 }
 
-.container {
-  padding: 20px;
+.promo-card {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
 }
 
-.card {
-  background-color: white;
+.promo-image {
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  padding: 40px;
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
 }
 
-.main-heading {
-  font-size: 42px;
-  color: #333;
-  margin-bottom: 30px;
-  line-height: 1.4;
-}
-
-.golf-image {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 30px;
-  border-radius: 16px;
-}
-
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-size: 20px;
-  color: #444;
-  margin-bottom: 40px;
-}
-
-.main-button {
+/* الزر فوق الصورة */
+.overlay-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #ff4081;
   color: white;
-  text-decoration: none;
-  padding: 18px 36px;
-  font-size: 26px;
+  padding: 16px 32px;
+  font-size: 24px;
   border-radius: 12px;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
-.main-button:hover {
+.overlay-button:hover {
   background-color: #e91e63;
-}
-
 }
