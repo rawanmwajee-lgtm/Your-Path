@@ -1,5 +1,5 @@
 body {
-  background-color: #ffeef5; /* بيبي بينك */
+  background-color: #ffeef5; /* خلفية بيبي بينك */
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
@@ -14,26 +14,38 @@ body {
   padding: 20px;
 }
 
-.main-image {
+.image-card {
+  position: relative;
+  display: inline-block;
   max-width: 700px;
   width: 100%;
   border-radius: 20px;
+  overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
 }
 
-.main-button {
+.main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* زر داخل الصورة */
+.overlay-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #ff4081;
   color: white;
   text-decoration: none;
   padding: 16px 32px;
   font-size: 24px;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: background-color 0.3s ease;
-  display: inline-block;
 }
 
-.main-button:hover {
+.overlay-button:hover {
   background-color: #e91e63;
 }
-
