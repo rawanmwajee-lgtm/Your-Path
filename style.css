@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: #ffeef5; /* بيبي بينك فاتح */
   font-family: 'Arial', sans-serif;
   text-align: center;
   margin: 0;
@@ -7,26 +7,32 @@ body {
 }
 
 .container {
-  padding: 30px;
+  padding: 40px;
+}
+
+.main-heading {
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 30px;
 }
 
 .golf-image {
   width: 80%;
   max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
+  margin: 0 auto 40px;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 .main-button {
+  display: inline-block;
   background-color: #ff4081;
   color: white;
-  border: none;
-  padding: 18px 36px;
-  font-size: 24px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-bottom: 20px;
+  text-decoration: none;
+  padding: 20px 40px;
+  font-size: 28px;
+  border-radius: 12px;
   transition: background-color 0.3s ease;
 }
 
@@ -34,27 +40,3 @@ body {
   background-color: #e91e63;
 }
 
-#bookingForm {
-  margin-top: 20px;
-  background-color: #f7f7f7;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.05);
-  display: inline-block;
-}
-
-label {
-  display: block;
-  margin: 15px 0 10px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-select {
-  width: 70%;
-  padding: 14px;
-  margin-bottom: 20px;
-  font-size: 18px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
