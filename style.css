@@ -1,73 +1,18 @@
-body {
-  background-color: #ffeef5; /* خلفية بيبي بينك */
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.container {
-  text-align: center;
-  padding: 20px;
-}
-
-.image-card {
-  position: relative;
-  display: inline-block;
-  max-width: 700px;
-  width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-}
-
-.main-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* زر داخل الصورة */
-.overlay-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.back-button {
   background-color: #ff4081;
   color: white;
-  text-decoration: none;
-  padding: 16px 32px;
-  font-size: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
-
-.overlay-button:hover {
-  background-color: #e91e63;
-}
-
-/* زر الرجوع */
-.back-button {
-  background-color: #ffffff;
-  color: #ff4081;
   text-decoration: none;
   padding: 14px 28px;
   font-size: 20px;
-  border: 2px solid #ff4081;
   border-radius: 10px;
   display: inline-block;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .back-button:hover {
-  background-color: #ff4081;
-  color: white;
+  background-color: #e91e63;
+  transform: translateY(-2px);
 }
-: #e91e63;
-}
+
