@@ -7,10 +7,34 @@
 </head>
 <body>
   <div class="container">
-    <!-- محتوى الصفحة هنا -->
+    <h1 class="section-title">وين أجيك؟</h1>
+    <label class="section-sub">حدد الكلية اللي تبي أجيك منها</label>
+    <select id="from" class="dropdown">
+      <option>كلية التكنولوجيا</option>
+      <option>كلية العلوم الصحية</option>
+      <option>كلية الحوسبة</option>
+    </select>
 
+    <h1 class="section-title">وين تبي أوصلك؟</h1>
+    <label class="section-sub">حدد الكلية اللي تبي أوصلك لها</label>
+    <select id="to" class="dropdown">
+      <option>كلية التكنولوجيا</option>
+      <option>كلية العلوم الصحية</option>
+      <option>كلية الحوسبة</option>
+    </select>
+
+    <button onclick="updateRoute()" class="main-button">تحديث المسار</button>
+
+    <!-- زر الرجوع -->
     <a href="index.html" class="back-button">الرجوع إلى الصفحة الرئيسية</a>
   </div>
+
+  <script>
+    function updateRoute() {
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      alert("تم تحديث المسار من " + from + " إلى " + to);
+    }
+  </script>
 </body>
 </html>
-
