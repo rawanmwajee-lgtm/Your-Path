@@ -10,30 +10,53 @@
     <h1 class="section-title">وين أجيك؟</h1>
     <label class="section-sub">حدد الكلية اللي تبي أجيك منها</label>
     <select id="from" class="dropdown">
-      <option>كلية التكنولوجيا</option>
       <option>كلية العلوم الصحية</option>
-      <option>كلية الحوسبة</option>
+      <option>كلية التمريض</option>
+      <option>معهد التمريض</option>
+      <option>كلية التكنولوجيا</option>
+      <option>البرج</option>
     </select>
 
     <h1 class="section-title">وين تبي أوصلك؟</h1>
     <label class="section-sub">حدد الكلية اللي تبي أوصلك لها</label>
     <select id="to" class="dropdown">
-      <option>كلية التكنولوجيا</option>
       <option>كلية العلوم الصحية</option>
-      <option>كلية الحوسبة</option>
+      <option>كلية التمريض</option>
+      <option>معهد التمريض</option>
+      <option>كلية التكنولوجيا</option>
+      <option>البرج</option>
     </select>
 
-    <button onclick="updateRoute()" class="main-button">تحديث المسار</button>
+    <button onclick="calculatePrice()" class="main-button">احسب السعر</button>
+    <p id="priceResult" class="price-text"></p>
 
-    <!-- زر الرجوع -->
     <a href="index.html" class="back-button">الرجوع إلى الصفحة الرئيسية</a>
   </div>
 
   <script>
-    function updateRoute() {
+    function calculatePrice() {
       const from = document.getElementById("from").value;
       const to = document.getElementById("to").value;
-      alert("تم تحديث المسار من " + from + " إلى " + to);
+      let price = "";
+
+      if ((from === "كلية العلوم الصحية" || from === "كلية التمريض" || from === "معهد التمريض") && to === "كلية التكنولوجيا") {
+        price = "1 د.ك";
+      } else if (from === "كلية التكنولوجيا" && (to === "كلية العلوم الصحية" || to === "كلية التمريض" || to === "معهد التمريض")) {
+        price = "1 د.ك";
+      } else if ((from === "كلية العلوم الصحية" && (to === "كلية التمريض" || to === "معهد التمريض")) ||
+                 (to === "كلية العلوم الصحية" && (from === "كلية التمريض" || from === "معهد التمريض")) ||
+                 (from === "كلية التمريض" && to === "معهد التمريض") ||
+                 (to === "كلية التمريض" && from === "معهد التمريض")) {
+        price = "0.5 د.ك";
+      } else if (to === "البرج" || from === "البرج") {
+        price = "0.5 د.ك";
+      } else if (from === to) {
+        price = "اختر وجهتين مختلفتين";
+      } else {
+        price = "يرجى اختيار مسار صحيح";
+      }
+
+      document.getElementById("priceResult").innerText = "السعر: " + price;
     }
   </script>
 </body>
