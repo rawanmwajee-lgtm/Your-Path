@@ -7,72 +7,10 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="section-title">وين أجيك؟</h1>
-    <p class="section-sub">حدد الكلية اللي تبي أجيك منها</p>
-    <select id="from" class="dropdown">
-      <option>كلية التكنولوجيا</option>
-      <option>كلية العلوم الصحية</option>
-      <option>كلية التمريض</option>
-      <option>معهد التمريض</option>
-      <option>البرج</option>
-    </select>
+    <!-- محتوى الصفحة هنا -->
 
-    <h1 class="section-title">وين تبي أوصلك؟</h1>
-    <p class="section-sub">حدد الكلية اللي تبي أوصلك لها</p>
-    <select id="to" class="dropdown">
-      <option>كلية التكنولوجيا</option>
-      <option>كلية العلوم الصحية</option>
-      <option>كلية التمريض</option>
-      <option>معهد التمريض</option>
-      <option>البرج</option>
-    </select>
-
-    <button onclick="calculatePrice()" class="main-button">احسب السعر</button>
-    <p id="priceResult" class="price-text"></p>
+    <a href="index.html" class="back-button">الرجوع إلى الصفحة الرئيسية</a>
   </div>
-
-  <script>
-    function calculatePrice() {
-      const from = document.getElementById("from").value;
-      const to = document.getElementById("to").value;
-      let price = 0;
-
-      // الحالات الخاصة اللي اتفقنا عليها (مع العكس)
-      if (
-        (from === "كلية التكنولوجيا" && to === "كلية العلوم الصحية") ||
-        (from === "كلية العلوم الصحية" && to === "كلية التكنولوجيا")
-      ) {
-        price = 1;
-      } else if (
-        (from === "كلية التمريض" && to === "كلية التكنولوجيا") ||
-        (from === "كلية التكنولوجيا" && to === "كلية التمريض")
-      ) {
-        price = 1;
-      } else if (
-        (from === "كلية العلوم الصحية" && to === "كلية التمريض") ||
-        (from === "كلية التمريض" && to === "كلية العلوم الصحية")
-      ) {
-        price = 0.25;
-      }
-
-      // باقي الحالات العامة
-      else if (from === to) {
-        price = 0;
-      } else if (
-        (from === "معهد التمريض" && (to === "كلية التمريض" || to === "كلية العلوم الصحية")) ||
-        ((from === "كلية التمريض" || from === "كلية العلوم الصحية") && to === "معهد التمريض")
-      ) {
-        price = 0.5;
-      } else if (from === "البرج" || to === "البرج") {
-        price = 0.25;
-      } else {
-        price = 1.5;
-      }
-
-      document.getElementById("priceResult").innerText =
-        price === 0 ? "التوصيل مجاني" : `السعر: ${price} د.ك`;
-    }
-  </script>
 </body>
 </html>
 
